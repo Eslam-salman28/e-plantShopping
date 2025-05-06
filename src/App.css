@@ -38,11 +38,11 @@
 
 .landing_content {
  margin-top: 430px;
-  margin-left: 100px;
+  margin-left: 200px;
   transform: translate(-50%, -50%);
   z-index: 1;
   text-align: center;
-  /* background-color: red; */
+  /* background-color: red;  */
   width: 400px;
   height: 400px;
   display: flex;
@@ -132,6 +132,7 @@
   .aboutus_container {
     margin-top: 20px; /* Adjust as needed */
     width: 80%; /* Adjust as needed */
+   
   }
 }
 
@@ -142,6 +143,8 @@
   }
 
   .aboutus_container {
-    width: 90%; /* Adjust as needed */
+    width: 80%; /* Adjust as needed */
+   
+
   }
 }
