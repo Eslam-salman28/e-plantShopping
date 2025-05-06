@@ -20,14 +20,30 @@ export const CartSlice = createSlice({
         }
 
     },
-    removeItem: (state, action) => {
-        state.items = state.items.filter(item => item.name !== action.payload)  
+    removeItem:(state, action) => {
+      
+        const existingItem = state.items.find(item => item.name === action.payload);
+        if (existingItem) {
+          state.totalItem-=existingItem.quantity
+          state.items = state.items.filter(item => item.name !== action.payload); 
+        }
+         
+         
+          
+       
+       
+      
     },
     updateQuantity: (state, action) => {
         const { name, quantity } = action.payload;
         const itemToUpdate = state.items.find(item => item.name === name);
         if (itemToUpdate) {
-            itemToUpdate.quantity = quantity; // If the item is found, update its quantity to the new value
+            itemToUpdate.quantity = quantity;
+            state.totalItem=0
+            state.items.forEach((item) => {
+                state.totalItem += item.quantity;
+            })
+             // If the item is found, update its quantity to the new value
 }
     
     },
